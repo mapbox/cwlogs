@@ -86,18 +86,20 @@ test('[readable] works for several pages', function(assert) {
   var count = 0;
 
   AWS.mock('CloudWatchLogs', 'filterLogEvents', function() {
-    var req = new events.EventEmitter();
-    req.send = function() {
-      setTimeout(function() {
-        count++;
-        var res = { data: { events: [] } };
-        for (var i = 0; i < 5000; i++) res.data.events.push({ 'message': i });
-        res.hasNextPage = function() { return count < 2; };
-        if (res.hasNextPage()) res.nextPage = function() { return req; };
-        req.emit('success', res);
-      }, 10);
-    };
-    return req;
+    return (function makeRequest() {
+      var req = new events.EventEmitter();
+      req.send = function() {
+        setTimeout(function() {
+          count++;
+          var res = { data: { events: [] } };
+          for (var i = 0; i < 5000; i++) res.data.events.push({ 'message': i });
+          res.hasNextPage = function() { return count < 2; };
+          if (res.hasNextPage()) res.nextPage = function() { return makeRequest(); };
+          req.emit('success', res);
+        }, 10);
+      };
+      return req;
+    })();
   });
 
   var writer = writable(30);

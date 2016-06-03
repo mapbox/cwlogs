@@ -46,7 +46,7 @@ var readable = cwlogs.readable({
 readable.pipe(process.stdout);
 ```
 
-Returns **** a Node.js [ReadableStream](https://nodejs.org/api/stream.html#stream_class_stream_readable_1)
+Returns **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** a Node.js [ReadableStream](https://nodejs.org/api/stream.html#stream_class_stream_readable_1)
 
 ## CLI tool
 

@@ -6,7 +6,8 @@
   "scripts": {
     "pretest": "eslint index.js test bin lib",
     "test": "nyc tape test/*.test.js",
-    "coverage": "nyc --reporter html tape test/*.test.js && opener coverage/index.html"
+    "coverage": "nyc --reporter html tape test/*.test.js && opener coverage/index.html",
+    "docs": "documentation readme index.js --section 'Node.js API' --quiet"
   },
   "bin": {
     "cwlogs": "bin/cwlogs.js"
@@ -28,6 +29,7 @@
   "homepage": "https://github.com/mapbox/cwlogs#readme",
   "devDependencies": {
     "aws-sdk-mock": "^1.2.0",
+    "documentation": "^4.0.0-beta5",
     "eslint": "^2.11.1",
     "nyc": "^6.4.4",
     "opener": "^1.4.1",

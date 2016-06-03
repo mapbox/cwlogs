@@ -1,0 +1,40 @@
+{
+  "name": "cwlogs",
+  "version": "1.0.0",
+  "description": "Node.js stream-based access to CloudWatch Logs",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "eslint index.js test bin lib",
+    "test": "nyc tape test/*.test.js",
+    "coverage": "nyc --reporter html tape test/*.test.js && opener coverage/index.html"
+  },
+  "bin": {
+    "cwlogs": "bin/cwlogs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapbox/cwlogs.git"
+  },
+  "keywords": [
+    "AWS",
+    "CloudWatch",
+    "Logs"
+  ],
+  "author": "Mapbox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapbox/cwlogs/issues"
+  },
+  "homepage": "https://github.com/mapbox/cwlogs#readme",
+  "devDependencies": {
+    "aws-sdk-mock": "^1.2.0",
+    "eslint": "^2.11.1",
+    "nyc": "^6.4.4",
+    "opener": "^1.4.1",
+    "tape": "^4.5.1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.3.17",
+    "minimist": "^1.2.0"
+  }
+}

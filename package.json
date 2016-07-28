@@ -1,6 +1,6 @@
 {
   "name": "cwlogs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node.js stream-based access to CloudWatch Logs",
   "main": "index.js",
   "scripts": {

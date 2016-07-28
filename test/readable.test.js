@@ -138,7 +138,7 @@ test('[readable] messages strips object wrappers', function(assert) {
         assert.pass('finished without error');
         assert.equal(writer.chunks.length, 1000, 'got all events');
         assert.ok(writer.chunks.every(function(chunk, i) {
-          return chunk.toString() === i.toString();
+          return chunk.toString() === i.toString() + '\n';
         }), 'only returned .message for each event');
         AWS.restore('CloudWatchLogs');
         assert.end();

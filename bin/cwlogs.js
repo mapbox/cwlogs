@@ -31,14 +31,15 @@ function invalid(msg, command) {
   process.exit(msg ? 1 : 0);
 }
 
-if (args.help || args.h) return invalid();
-
 var commands = ['read'];
 var command = args._[0];
-if (commands.indexOf(command) === -1) return invalid('Invalid command ' + command);
+
+if (args.help || args.h) return invalid(null, command);
+
+if (commands.indexOf(command) === -1) return invalid('Invalid command ' + command, command);
 
 if (command === 'read') {
-  if (!args._[1]) return invalid('Missing log group region and name');
+  if (!args._[1]) return invalid('Missing log group region and name', command);
 
   var options = {
     region: args._[1].split(':')[0],

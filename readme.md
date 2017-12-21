@@ -25,6 +25,7 @@ Provide a readable stream of log events for a particular log group
 -   `options` **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** default Node.js [ReadableStream options](https://nodejs.org/api/stream.html#stream_class_stream_readable_1)
     with extensions detailed below.
     -   `options.group` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the name of the LogGroup to read
+    -   `options.logStreamNames` An optional array of log stream name
     -   `options.region` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the AWS region in which the LogGroup resides
     -   `options.pattern` **\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** a search string to use to filter log events
     -   `options.start` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** read log events after the provided time (in ms since since Jan 01 1970) (optional, default `15minutesago`)

@@ -36,7 +36,10 @@
     "tape": "^4.6.0"
   },
   "dependencies": {
-    "aws-sdk": "^2.3.17",
+    "aws-sdk": "^2.286.2",
     "minimist": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.10.0"
   }
 }

@@ -1,7 +1,5 @@
 # cwlogs
 
-[![Build Status](https://travis-ci.org/mapbox/cwlogs.svg?branch=master)](https://travis-ci.org/mapbox/cwlogs)
-
 Node.js stream-based access to CloudWatch Logs.
 
 ## Node.js API
